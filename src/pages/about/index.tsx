@@ -1,5 +1,5 @@
 import React from 'react';
-import HomePageComponent from '../../src/web/ui/pages/homePageComponent';
+import HomePageComponent from '../../web/ui/pages/homePageComponent';
 
 
 export default function AboutPage() {
