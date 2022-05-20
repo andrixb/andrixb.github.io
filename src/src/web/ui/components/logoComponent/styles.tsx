@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { green } from '../../../../shared/ui/styles/colors';
-import { mSizePercent, zIndexMidground } from '../../../../shared/ui/styles/sizes';
+import { mSizePercent, mSizeWidthDisplay, zIndexMidground } from '../../../../shared/ui/styles/sizes';
 
 type LogoContainerProps = {
     toggle: boolean;
@@ -18,10 +18,16 @@ export const LogoContainer = styled.div<LogoContainerProps>`
     align-items: center;
     justify-content: center;
     z-index: ${zIndexMidground + 1};
-    transition: all 800ms cubic-bezier(0.190, 1.000, 0.560, 1.000);
-    transition-delay: 200ms;
+    // box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    
 
-    // background-color: ${(props) => (props.toggle ? 'red' : 'green')};
+    @media only screen and (min-width: ${mSizeWidthDisplay}) {
+        flex-flow: row;
+        justify-content: left;
+        z-index: ${zIndexMidground - 1};
+        transition: all 800ms cubic-bezier(0.190, 1.000, 0.560, 1.000);
+        transition-delay: 200ms;
+    }
 
     & svg {
         position: absolute;
