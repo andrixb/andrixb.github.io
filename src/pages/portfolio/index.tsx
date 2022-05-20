@@ -2,6 +2,6 @@ import React from 'react';
 import HomePageComponent from '../../src/web/ui/pages/homePageComponent';
 
 
-export default function HomePage() {
-   return <HomePageComponent />;
+export default function PortfolioPage() {
+   return <h1>Under Constructions</h1>;
 }

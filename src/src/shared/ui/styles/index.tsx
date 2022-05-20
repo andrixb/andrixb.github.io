@@ -23,6 +23,10 @@ export const GlobalStyle = createGlobalStyle`
 		& h1 {
 			font-weight: 
 		}
+
+		a {
+			text-decoration: none;
+		}
 	}
 `;
 
