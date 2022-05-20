@@ -43,7 +43,6 @@ export const MenuComponentStyled = styled.div`
 
             &:hover {
                 &:after {
-                    top: 0;
                     left:0;
                     bottom: 0;
                     width: 100%;;
