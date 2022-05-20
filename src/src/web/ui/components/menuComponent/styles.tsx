@@ -35,16 +35,15 @@ export const MenuComponentStyled = styled.div`
                 position: absolute;
                 overflow: hidden;
                 border-bottom: 1px solid ${black};
-                transition: all 0.3s ease-out;
+                transition: 0.3s ease-in;
                 width: 0;
-                top: 100;
+                bottom: 0;
                 left: 100;
             }
 
             &:hover {
                 &:after {
                     left:0;
-                    bottom: 0;
                     width: 100%;;
                     padding-bottom: ${xsSize};
                 }
