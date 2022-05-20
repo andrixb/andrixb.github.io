@@ -1,27 +1,86 @@
 import styled from 'styled-components';
-import { black, grayDark } from '../../../../shared/ui/styles/colors';
-import { fontWeightRegular } from '../../../../shared/ui/styles/typography';
+import { black, grayDark, green, orange, white } from '../../../../shared/ui/styles/colors';
 import {
+    fontWeightBold,
+    fontWeightExtraBold,
+    fontWeightLight,
+    fontWeightRegular,
+} from '../../../../shared/ui/styles/typography';
+import {
+    GOLDEN_RATIO,
     lSize,
     mSize,
     mSizeWidthDisplay,
     sSize,
+    xlSize,
     xsSize,
-    xxlSize,
-    zIndexMidground,
+    zIndexForeground,
 } from '../../../../shared/ui/styles/sizes';
+
+export const MenuLogoComponent = styled.div`
+    display: flex;
+    flex-flow: row;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 1px solid ${orange};
+    padding: ${sSize};
+
+    & h5 {
+        color: ${black};
+        font-size: ${lSize};
+        font-weight: ${fontWeightExtraBold};
+        text-transform: uppercase;
+    }
+
+    & p {
+        text-transform: lowercase;
+        color: ${white};
+        font-size: ${mSize};
+    }
+
+    @media only screen and (min-width: ${mSizeWidthDisplay}) {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: ${18 * GOLDEN_RATIO}%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+
+        border-bottom: 3px solid ${orange};
+
+        & h5 {
+            font-size: ${lSize};
+            font-weight: ${fontWeightLight};
+        }
+
+        & p {
+            font-size: ${mSize};
+        }
+    }
+`;
 
 export const MenuComponentStyled = styled.div`
     position: fixed;
     width: 100%;
     top: 0;
     background-color: ${grayDark};
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    padding: ${lSize};
-    z-index: ${zIndexMidground};
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    z-index: ${zIndexForeground};
+    padding-left: ${mSize};
+    padding-right: ${mSize};
+    display: flex;
+    display: flex;
+    flex-flow: column;
 
     @media only screen and (min-width: ${mSizeWidthDisplay}) {
+        padding: ${lSize};
         top: auto;
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
     }
 
     & ul {
@@ -29,18 +88,17 @@ export const MenuComponentStyled = styled.div`
         display: flex;
         flex-flow: row;
         list-style-type: none;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        margin-top:${sSize};
 
         @media only screen and (min-width: ${mSizeWidthDisplay}) {
-            width: 100%;
+            width: 30%;
             justify-content: left;
+            margin-top:0;
         }
 
         & li {
             position: relative;
-            text-transform: uppercase;
-            font-size: ${mSize};
-            font-weight: ${fontWeightRegular};
             margin: ${sSize};
             cursor: pointer;
 
@@ -48,10 +106,10 @@ export const MenuComponentStyled = styled.div`
                 content: '';
                 position: absolute;
                 overflow: hidden;
-                border-bottom: 1px solid ${black};
+                border-bottom: 3px solid ${orange};
                 padding-bottom: ${xsSize};
                 width: 0;
-                bottom: 0;
+                bottom: -5px;
                 left: 0;
                 opacity: 0;
                 transition: 0.3s ease-in;
@@ -66,7 +124,14 @@ export const MenuComponentStyled = styled.div`
             }
 
             & a {
+                text-transform: uppercase;
+                font-weight: ${fontWeightBold};
                 color: ${black};
+
+                @media only screen and (min-width: ${mSizeWidthDisplay}) {
+                    font-size: ${mSize};
+                    color: ${black};
+                }
             }
         }
     }

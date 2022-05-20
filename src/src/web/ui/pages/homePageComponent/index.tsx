@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import GlobalStyledLayout from '../../../../shared/ui/styles';
 import { useDetectMobile } from '../../../infrastructure/hooks/useDetectMobile';
-import { LogoComponent } from '../../components/logoComponent';
+import HeroComponent from '../../components/footerComponent';
+import { HelloComponent } from '../../components/helloComponent';
 import MenuComponent from '../../components/menuComponent';
 import { HomePageContainer } from './styles';
 
@@ -15,7 +16,8 @@ export default function HomePageComponent() {
         <GlobalStyledLayout>
             <HomePageContainer>
                 <MenuComponent setInteracted={setToggle} />
-                <LogoComponent toggle={toggle} />
+                <HelloComponent toggle={toggle} />
+                <HeroComponent />
             </HomePageContainer>
         </GlobalStyledLayout>
     );

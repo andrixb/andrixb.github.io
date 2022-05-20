@@ -15,7 +15,7 @@ const config: GatsbyConfig = {
             },
         },
         'gatsby-plugin-image',
-        'gatsby-plugin-react-helmet',
+        'gatsby-plugin-react-head',
         'gatsby-plugin-sitemap',
         {
             resolve: 'gatsby-plugin-manifest',
@@ -32,7 +32,6 @@ const config: GatsbyConfig = {
                 name: 'images',
                 path: './src/assets/images',
             },
-            __key: 'images',
         },
         {
             resolve: 'gatsby-source-filesystem',
@@ -40,13 +39,20 @@ const config: GatsbyConfig = {
                 name: 'pages',
                 path: './src/pages/',
             },
-            __key: 'pages',
         },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `markdown-pages`,
+                path: `./src/pages/`,
+            },
+        },
+        `gatsby-transformer-remark`,
         {
             resolve: 'gatsby-plugin-react-svg',
             options: {
                 rule: {
-                    include: /assets/
+                    include: /assets/,
                 },
             },
         },

@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
 	
 	body {
 		font-family: 'Open Sans', sans-serif;
-		color: ${(props) => (props.theme === white ? white : black)};
+		color: ${white};
 
 		& h1 {
 			font-weight: 

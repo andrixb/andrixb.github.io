@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { MenuComponentStyled } from './styles';
+import { MenuComponentStyled, MenuLogoComponent } from './styles';
 
 export type MenuComponentProps = {
     children?: JSX.Element;
@@ -12,6 +12,10 @@ export default function MenuComponent({ setInteracted, children }: MenuComponent
     const handleOnMouseLeave = (event: any) =>  setInteracted(false);
     return (
         <MenuComponentStyled>
+            <MenuLogoComponent>
+                <h5>Andrea Baldo</h5>
+                <p>Software Engineer</p>
+            </MenuLogoComponent>
             <ul onMouseEnter={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave}>
                 <li>
                     <a href="/portfolio">Portfolio</a>
