@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkandrixb_github_io=self.webpackChunkandrixb_github_io||[]).push([[649],{2461:function(n,t,u){u.r(t),u.d(t,{default:function(){return r}});var e=u(7294);function r(){return e.createElement("h1",null,"Under Constructions")}}}]);
+//# sourceMappingURL=component---src-pages-contacts-index-tsx-2f37ee42e26a9019665e.js.map
