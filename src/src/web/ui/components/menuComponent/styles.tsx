@@ -33,9 +33,10 @@ export const MenuLogoComponent = styled.div`
     }
 
     & p {
-        text-transform: lowercase;
+        text-transform: uppercase;
         color: ${white};
         font-size: ${mSize};
+        font-weight: ${fontWeightExtraBold};
     }
 
     @media only screen and (min-width: ${mSizeWidthDisplay}) {
@@ -49,11 +50,10 @@ export const MenuLogoComponent = styled.div`
         justify-content: center;
         align-items: center;
 
-        border-bottom: 3px solid ${orange};
+        border: 0px;
 
         & h5 {
             font-size: ${lSize};
-            font-weight: ${fontWeightLight};
         }
 
         & p {
@@ -90,11 +90,13 @@ export const MenuComponentStyled = styled.div`
         list-style-type: none;
         justify-content: space-between;
         margin-top:${sSize};
+        margin-bottom:${sSize};
 
         @media only screen and (min-width: ${mSizeWidthDisplay}) {
             width: 30%;
             justify-content: left;
             margin-top:0;
+            margin-bottom:0;
         }
 
         & li {
@@ -106,13 +108,17 @@ export const MenuComponentStyled = styled.div`
                 content: '';
                 position: absolute;
                 overflow: hidden;
-                border-bottom: 3px solid ${orange};
+                border-bottom: 1px solid ${orange};
                 padding-bottom: ${xsSize};
                 width: 0;
                 bottom: -5px;
                 left: 0;
                 opacity: 0;
                 transition: 0.3s ease-in;
+
+                @media only screen and (min-width: ${mSizeWidthDisplay}) {
+                    border-bottom: 3px solid ${orange};
+                }
             }
 
             &:hover {
@@ -129,7 +135,7 @@ export const MenuComponentStyled = styled.div`
                 color: ${black};
 
                 @media only screen and (min-width: ${mSizeWidthDisplay}) {
-                    font-size: ${mSize};
+                    font-size: ${mSize + sSize};
                     color: ${black};
                 }
             }

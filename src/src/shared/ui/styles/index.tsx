@@ -1,6 +1,6 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-import { black, white } from './colors';
+import {  white } from './colors';
 import { fontFaceImport } from './typography';
 
 type LayoutProps = {
