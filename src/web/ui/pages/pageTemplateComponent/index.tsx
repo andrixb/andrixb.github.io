@@ -1,14 +1,27 @@
-// import React from 'react';
-// import { graphql } from 'gatsby';
-// import { fontmatterQuery } from '../../../infrastructure/queries/frontmatterQuery';
+import { Link } from 'gatsby';
+import React from 'react';
+import { PageTemplateContainerContent, PageTemplateContainerStyled, PageTemplateHeaderContent, PageTemplateIconBack, PageTemplateParagraphContent } from './styles';
 
-// export default function Page({ data }) {
-//     return (
-//         <div>
-//             <h1>About {data.site.siteMetadata.title}</h1>
-//             <p>We're a very cool website you should return to often.</p>
-//         </div>
-//     );
-// }
+type PageTemplateComponentProps = {
+   children?: JSX.Element;
+   title?: string;
+   contents?: string[];
+}
 
-// export const query = fontmatterQuery;
+export default function PageTemplateComponent({ children, title, contents }: PageTemplateComponentProps) {
+    return (
+        <PageTemplateContainerStyled>
+            <PageTemplateIconBack><Link to="/">Home Page</Link></PageTemplateIconBack>
+            {title ? 
+                <PageTemplateHeaderContent>
+                    {title}
+                </PageTemplateHeaderContent> : <></>}
+            <PageTemplateContainerContent>
+            { children }
+            {contents?.map((content, index) => (
+                <PageTemplateParagraphContent key={index}>{content}</PageTemplateParagraphContent>
+                ))}
+            </PageTemplateContainerContent>
+        </PageTemplateContainerStyled>
+    );
+}

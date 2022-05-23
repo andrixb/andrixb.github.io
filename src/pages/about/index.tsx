@@ -1,7 +1,6 @@
 import React from 'react';
-import HomePageComponent from '../../web/ui/pages/homePageComponent';
-
+import AboutPageComponent from '../../web/ui/pages/aboutPageComponent';
 
 export default function AboutPage() {
-   return <h1>Under Constructions</h1>;
+    return <AboutPageComponent />;
 }
